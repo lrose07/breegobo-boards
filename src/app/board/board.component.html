@@ -1,0 +1,14 @@
+<p>board works!</p>
+<form [formGroup]="newColumnForm" (ngSubmit)="createNewColumn()">
+  <input type="text" placeholder="New column name" formControlName="columnName" name="columnName">
+  <button type="submit">Create Column</button>
+</form>
+
+<ol id="column-container">
+  <li id="column-item" *ngFor="let column of allColumns">
+    <app-column [name]="column.name"></app-column>
+  </li>
+</ol>
+
+
+<!--#newColumnForm="ngForm"-->
